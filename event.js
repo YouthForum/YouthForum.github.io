@@ -1,5 +1,5 @@
 const events = [
-  {name: 'OPG Visit', Date: "21-7-2024 9:30am", summary: 'The OPG group is meeting to survey the OPG and decide which area they will start to look after as well as talk to Echo & Paul about what plants/weeds are in the gardens', Day:'21', Month:'7'},
+  {name: 'OPG Visit', Date: "18-8-2024 9:30am", summary: 'The OPG group is meeting to survey the OPG and decide which area they will start to look after as well as talk to Echo & Paul about what plants/weeds are in the gardens', Day:'18', Month:'8'},
   {name: 'No Upcoming Events', Date: "Check Back Soon", summary: '', Day:'32', Month:'13'}
 ];
 
