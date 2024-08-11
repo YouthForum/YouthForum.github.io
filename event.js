@@ -2,13 +2,15 @@ const events = [
   {name: 'OPG Visit', Date: "18-8-2024 9:30am", summary: 'The OPG group is meeting to survey the OPG and decide which area they will start to look after as well as talk to Echo & Paul about what plants/weeds are in the gardens', Day:'18', Month:'8'},
   {name: 'No Upcoming Events', Date: "Check Back Soon", summary: '', Day:'32', Month:'13'} //Keep this in no matter what
 ];
-
+const eventspage = [
+  {name: 'OPG Visit', Date: "18-8-2024 9:30am", summary: 'The OPG group is meeting to survey the OPG and decide which area they will start to look after as well as talk to Echo & Paul about what plants/weeds are in the gardens', Day:'18', Month:'8'}
+];
 const Initiatives = [{name:''}];
-
 const currentDate = new Date();
 const dayOfMonth = currentDate.getDate();
-let mostUrgentEvent = [{name:'', date:'', summary:''}];
 const d = new Date();
+const eventdiv = document.querySelector('.js-events');
+let mostUrgentEvent = [{name:'', date:'', summary:''}];
 let currentMonth = d.getMonth() + 1; // getMonth() returns 0-11, so add 1 to match with your event Month format
 let currentNextEventMonth = 13;
 let currentNextEventDay = 32;
@@ -18,7 +20,6 @@ function findNextEvent() {
       if (event.Day >= dayOfMonth && event.Day < currentNextEventDay) {
         currentNextEventDay = event.Day;
         currentNextEventMonth = event.Month;
-        console.log(currentNextEventDay)
         mostUrgentEvent[0].name = event.name;
         mostUrgentEvent[0].date = event.Date;
         mostUrgentEvent[0].summary = event.summary;
@@ -36,23 +37,27 @@ function renderNextEvent() {
     </div>`;
   document.querySelector('.js-nextEvent').innerHTML = nextEventhtml;
 }
-renderNextEvent();
-
 function renderEvents() {
-  console.log(allhtml)
-  events.forEach(event => {
+  let allhtml = '';
+  eventspage.forEach((eventspageObject, Index) => {
+    console.log(eventspageObject);
+    const { name } = eventspageObject;
+    const { Date } = eventspageObject;
+    const { summary } = eventspageObject;
+    console.log(name)
     let html = `<div class="initiative">
-      <h3>${event.name}</h3>
-      <h4>${event.Date}</h4>
-      <p>${event.summary}</p>
+      <h3>${name}</h3>
+      <h4>${Date}</h4>
+      <p>${summary}</p>
     </div>`;
     allhtml += html;
+    eventdiv.innerHTML = allhtml;
   });
   
-  document.querySelector('.js-events').innerHTML = allhtml;
 }
 
 console.log(dayOfMonth);
 
 renderEvents();
+renderNextEvent();
 
