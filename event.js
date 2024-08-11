@@ -15,7 +15,6 @@ let currentNextEventDay = 32;
 function findNextEvent() {
   events.forEach(event => {
     if (event.Month >= currentMonth && event.Month < currentNextEventMonth) {
-      console.log('yay')
       if (event.Day >= dayOfMonth && event.Day < currentNextEventDay) {
         currentNextEventDay = event.Day;
         currentNextEventMonth = event.Month;
