@@ -1,0 +1,13 @@
+.imageGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+.image {
+  width: 500px;
+  transform: rotate(270deg);
+  margin:20px;
+}
+body {
+  
+}
