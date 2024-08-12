@@ -1,0 +1,1 @@
+const initiatives = [{name:'Onehunga Peoples Garden', summary:''}]
